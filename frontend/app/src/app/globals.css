@@ -1,0 +1,247 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* === Shared Variables & Base Styles === */
+body {
+  font-family: "Inter", sans-serif;
+}
+
+:root {
+  --bg-primary: 0 0% 100%;
+  --bg-secondary: 210 20% 98%;
+  --bg-tertiary: 210 20% 96%;
+  --text-primary: 222 84% 5%;
+  --text-secondary: 215 16% 47%;
+  --text-tertiary: 215 16% 57%;
+  --border-primary: 214 31% 91%;
+  --border-secondary: 217 19% 84%;
+  --accent-primary: 217 91% 60%;
+  --accent-primary-hover: 217 91% 53%;
+  --accent-text: 0 0% 100%;
+
+  --danger-bg: 0 93% 94%;
+  --danger-text: 0 84% 37%;
+  --danger-border: 0 86% 80%;
+  --danger-hover: 0 76% 70%;
+
+  --success-bg: 138 76% 92%;
+  --success-text: 142 71% 20%;
+  --success-border: 138 62% 75%;
+  --success-hover: 138 48% 65%;
+}
+
+/* === Extra Themes (Dark, Sunset, Oceanic) === */
+[data-theme="dark"],
+.dark {
+  --bg-primary: 222 84% 5%;
+  --bg-secondary: 240 10% 2%;
+  --bg-tertiary: 217 19% 12%;
+  --text-primary: 210 40% 98%;
+  --text-secondary: 217 10% 64%;
+  --text-tertiary: 215 14% 65%;
+  --border-primary: 217 19% 17%;
+  --border-secondary: 215 16% 26%;
+  --accent-primary: 217 91% 60%;
+  --accent-primary-hover: 217 91% 53%;
+  --accent-text: 0 0% 100%;
+  --danger-bg: 0 63% 8%;
+  --danger-text: 0 76% 70%;
+  --danger-border: 0 63% 15%;
+  --danger-hover: 0 84% 37%;
+  --success-bg: 142 76% 8%;
+  --success-text: 138 48% 65%;
+  --success-border: 142 69% 12%;
+  --success-hover: 142 71% 20%;
+}
+
+[data-theme="sunset"],
+.sunset {
+  --bg-primary: 45 100% 95%;
+  --bg-secondary: 45 100% 92%;
+  --bg-tertiary: 32 100% 75%;
+  --text-primary: 20 100% 20%;
+  --text-secondary: 20 100% 35%;
+  --text-tertiary: 20 100% 45%;
+  --border-primary: 32 100% 70%;
+  --border-secondary: 32 100% 60%;
+  --accent-primary: 32 100% 50%;
+  --accent-primary-hover: 32 100% 45%;
+  --accent-text: 0 0% 100%;
+  --danger-bg: 0 100% 95%;
+  --danger-text: 0 100% 35%;
+  --danger-border: 0 100% 80%;
+  --danger-hover: 0 100% 70%;
+  --success-bg: 120 100% 95%;
+  --success-text: 120 100% 25%;
+  --success-border: 120 100% 80%;
+  --success-hover: 120 100% 65%;
+}
+
+[data-theme="oceanic"],
+.oceanic {
+  --bg-primary: 200 100% 95%;
+  --bg-secondary: 200 100% 90%;
+  --bg-tertiary: 200 100% 75%;
+  --text-primary: 200 100% 25%;
+  --text-secondary: 200 100% 30%;
+  --text-tertiary: 200 100% 40%;
+  --border-primary: 200 100% 70%;
+  --border-secondary: 200 100% 60%;
+  --accent-primary: 200 100% 50%;
+  --accent-primary-hover: 200 100% 45%;
+  --accent-text: 0 0% 100%;
+  --danger-bg: 0 100% 95%;
+  --danger-text: 0 100% 35%;
+  --danger-border: 0 100% 80%;
+  --danger-hover: 0 100% 70%;
+  --success-bg: 120 100% 95%;
+  --success-text: 120 100% 25%;
+  --success-border: 120 100% 80%;
+  --success-hover: 120 100% 65%;
+}
+
+/* === Auth Pages (Signup/Login) Extras === */
+.pattern-bg {
+  background-color: #0c0a09;
+  background-image: radial-gradient(
+    circle at 1px 1px,
+    rgba(255, 255, 255, 0.1) 1px,
+    transparent 0
+  );
+  background-size: 2rem 2rem;
+}
+
+.text-shadow {
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.7);
+}
+
+.globe-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  perspective: 1000px;
+}
+
+.globe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  transform-style: preserve-3d;
+  animation: rotate-globe 30s linear infinite;
+}
+
+.globe-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba(167, 139, 250, 0.2);
+  border-radius: 50%;
+}
+.globe-ring-1 {
+  transform: rotateY(0deg) rotateX(15deg);
+}
+.globe-ring-2 {
+  transform: rotateY(0deg) rotateX(75deg);
+}
+.globe-ring-3 {
+  transform: rotateY(90deg) rotateX(15deg);
+}
+.globe-ring-4 {
+  transform: rotateY(90deg) rotateX(75deg);
+}
+.globe-ring-5 {
+  transform: rotateY(45deg);
+}
+.globe-ring-6 {
+  transform: rotateY(-45deg);
+}
+
+.data-point {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #818cf8;
+  border-radius: 50%;
+  box-shadow:
+    0 0 12px #818cf8,
+    0 0 24px #818cf8;
+  animation: pulse-data 2.5s infinite ease-in-out;
+}
+
+@keyframes rotate-globe {
+  from {
+    transform: rotateY(0deg) rotateX(10deg);
+  }
+  to {
+    transform: rotateY(360deg) rotateX(10deg);
+  }
+}
+
+@keyframes pulse-data {
+  0%,
+  100% {
+    transform: scale(0.9);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 1;
+  }
+}
+
+/* === Login Page Pattern === */
+.pattern-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 30% 30%, #4f46e5, transparent 50%);
+  opacity: 0.2;
+  filter: blur(80px);
+}
+.pattern-bg::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 70% 70%, #2563eb, transparent 50%);
+  opacity: 0.2;
+  filter: blur(80px);
+}
+
+/* === Blob Animation for Login Page === */
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+.animate-blob {
+  animation: blob 8s infinite;
+}
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+.animation-delay-4000 {
+  animation-delay: 4s;
+}

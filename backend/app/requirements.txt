@@ -1,0 +1,40 @@
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+sqlalchemy>=2.0.23
+alembic>=1.12.0
+psycopg2-binary==2.9.9
+redis==5.0.1
+pydantic>=2.5.0
+python-jose>=3.3.0
+passlib[bcrypt]>=1.7.4
+httpx>=0.25.0
+pytest>=7.4.0
+pytest-asyncio>=0.21.1
+black>=23.7.0
+isort>=5.12.0
+flake8>=6.0.0
+PyJWT>=2.8.0
+python-dotenv>=1.0.1
+email-validator>=2.1.1
+requests>=2.31.0
+zxcvbn>=4.5.0
+aiosmtplib>=3.0.0
+jinja2>=3.1.0
+
+# Background task processing
+celery>=5.3.0
+
+# Google OAuth and API integration
+google-auth>=2.23.0
+google-auth-oauthlib>=1.1.0
+google-auth-httplib2>=0.1.1
+google-api-python-client>=2.100.0
+
+# Encryption for token storage
+cryptography>=41.0.0
+
+# Rate limiting
+slowapi>=0.1.9
+
+# Object storage (MinIO/S3 compatible)
+minio>=7.2.0

@@ -1,0 +1,16 @@
+node_modules/
+.next/
+dist/
+coverage/
+.build/
+.turbo/
+.idea/
+.vscode/
+*.log
+*.lock
+package-lock.json
+yarn.lock
+.env
+.env.*
+public/
+next-env.d.ts
