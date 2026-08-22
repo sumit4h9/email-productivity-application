@@ -64,7 +64,7 @@ def _construct_secure_redis_url(base_url: str, password: str = None) -> str:
         raise ValueError("Invalid Redis URL provided")
 
     # Validate URL format
-    if not re.match(r"^redis://[a-zA-Z0-9.-]+(:\d+)?(/\d+)?$", base_url):
+    if not (base_url.startswith("redis://") or base_url.startswith("rediss://")):
         raise ValueError("Invalid Redis URL format")
 
     if not password:
@@ -74,7 +74,10 @@ def _construct_secure_redis_url(base_url: str, password: str = None) -> str:
         parsed = urlparse(base_url)
 
         # Construct secure URL with password
-        netloc = f"{parsed.username or 'default'}:{password}@{parsed.hostname}"
+        username = parsed.username or "default"
+        # If password is in URL, keep it, otherwise use the parameter
+        auth_password = password or parsed.password
+        netloc = f"{username}:{auth_password}@{parsed.hostname}"
         if parsed.port:
             netloc += f":{parsed.port}"
 
