@@ -431,7 +431,6 @@ __pycache__/
 infra/pgdata/
 infra/minio_data/
 infra/redis_data/
-
 # Environment files
 .env
 .env.*
