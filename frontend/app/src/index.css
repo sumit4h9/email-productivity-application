@@ -1,0 +1,524 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Axnore Design System - Indigo Theme with Advanced Animations */
+/* Extended with Axnore Dashboard theme tokens */
+
+@layer base {
+  :root {
+    /* Base colors */
+    --background: 0 0% 100%;
+    --foreground: 217.2 32.6% 17.5%;
+
+    /* Card colors */
+    --card: 0 0% 100%;
+    --card-foreground: 217.2 32.6% 17.5%;
+
+    /* Popover colors */
+    --popover: 0 0% 100%;
+    --popover-foreground: 217.2 32.6% 17.5%;
+
+    /* Primary indigo brand colors */
+    --primary: 238.7 83.5% 66.7%; /* #6366F1 */
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 238.7 83.5% 76.7%; /* #818CF8 */
+    --primary-lighter: 238.7 83.5% 86.7%; /* #A5B4FC */
+
+    /* Secondary colors */
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 217.2 32.6% 17.5%;
+
+    /* Muted colors */
+    --muted: 220 14.3% 95.9%;
+    --muted-foreground: 220 8.9% 46.1%;
+
+    /* Accent colors */
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 217.2 32.6% 17.5%;
+
+    /* Status colors */
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    /* Border and input */
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 238.7 83.5% 66.7%;
+
+    /* Gradients */
+    --hero-gradient: radial-gradient(
+      ellipse at 50% 30%,
+      hsl(220 14% 96%) 0%,
+      hsl(0 0% 100%) 70%
+    );
+    --glass-bg: rgba(255, 255, 255, 0.8);
+    --glass-border: rgba(229, 231, 235, 1);
+
+    /* Animation vars */
+    --glow-color: rgba(99, 102, 241, 0.4);
+    --transition-smooth: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Axnore Dashboard Custom Variables */
+    --bg-primary: 0 0% 100%;
+    --bg-secondary: 220 13% 97%;
+    --bg-tertiary: 217.2 32.6% 95%;
+    --text-primary: 222.2 84% 4.9%;
+    --text-secondary: 215.4 16.3% 46.9%;
+    --text-tertiary: 220 9% 46%;
+    --border-primary: 214.3 31.8% 91.4%;
+    --border-secondary: 217.2 32.6% 83%;
+    --accent-primary: 217.2 91.2% 59.8%;
+    --accent-primary-hover: 217.2 91.2% 53%;
+    --accent-text: 0 0% 100%;
+    --danger-bg: 0 93% 94%;
+    --danger-text: 0 84% 37%;
+    --danger-border: 0 86% 80%;
+    --danger-hover: 0 76% 70%;
+    --success-bg: 138 76% 92%;
+    --success-text: 142 71% 20%;
+    --success-border: 138 62% 75%;
+    --success-hover: 138 48% 65%;
+    --account-item-hover: 217.2 92% 96%;
+  }
+
+  .dark {
+    --background: 217.2 32.6% 17.5%;
+    --foreground: 210 40% 98%;
+
+    --card: 217.2 32.6% 17.5%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 217.2 32.6% 17.5%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 238.7 83.5% 76.7%;
+    --primary-foreground: 217.2 32.6% 17.5%;
+    --primary-light: 238.7 83.5% 86.7%;
+    --primary-lighter: 238.7 83.5% 96.7%;
+
+    --secondary: 217.2 32.6% 27.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 27.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 27.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --success: 142 71% 55%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 60%;
+    --warning-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 27.5%;
+    --input: 217.2 32.6% 27.5%;
+    --ring: 238.7 83.5% 76.7%;
+
+    --hero-gradient: radial-gradient(
+      ellipse at 50% 30%,
+      hsl(217 32% 17%) 0%,
+      hsl(217 32% 15%) 70%
+    );
+    --glass-bg: rgba(0, 0, 0, 0.4);
+    --glass-border: rgba(255, 255, 255, 0.1);
+
+    --glow-color: rgba(129, 140, 248, 0.6);
+    /* Dark Theme Custom Variables (Dashboard) */
+    --bg-primary: 222.2 84% 4.9%;
+    --bg-secondary: 240 10% 2%;
+    --bg-tertiary: 217.2 32.6% 17.5%;
+    --text-primary: 210 40% 98%;
+    --text-secondary: 217.2 32.6% 82%;
+    --text-tertiary: 215 20.2% 65%;
+    --border-primary: 217.2 32.6% 17.5%;
+    --border-secondary: 215.4 16.3% 26%;
+    --accent-primary: 217.2 91.2% 59.8%;
+    --accent-primary-hover: 217.2 91.2% 53%;
+    --accent-text: 0 0% 100%;
+    --danger-bg: 0 63% 8%;
+    --danger-text: 0 76% 70%;
+    --danger-border: 0 63% 15%;
+    --danger-hover: 0 84% 37%;
+    --success-bg: 142 76% 8%;
+    --success-text: 138 48% 65%;
+    --success-border: 142 69% 12%;
+    --success-hover: 142 71% 20%;
+    --account-item-hover: 217.2 32.6% 12%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  /* Reduce overall scale by lowering the base font size. Adjust media queries as desired. */
+  html {
+    font-size: 14px; /* ~87.5% of default 16px */
+  }
+  @media (min-width: 1280px) {
+    html {
+      font-size: 15px;
+    }
+  }
+  @media (min-width: 1536px) {
+    html {
+      font-size: 16px;
+    }
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Inter", sans-serif;
+  }
+}
+
+@layer components {
+  /* Navigation */
+  .nav-link {
+    @apply relative transition-colors duration-300;
+  }
+
+  .nav-link::after {
+    content: "";
+    @apply absolute w-0 h-0.5 -bottom-1 left-1/2 bg-primary transition-all duration-300;
+    transform: translateX(-50%);
+  }
+
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+
+  /* Hero gradient background */
+  .hero-gradient {
+    background: var(--hero-gradient);
+  }
+
+  /* Feature cards with glass effect */
+  .feature-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(10px);
+    @apply transition-all duration-300 relative overflow-hidden;
+    transform-style: preserve-3d;
+  }
+
+  .feature-card:before {
+    content: "";
+    @apply absolute inset-0 opacity-0 transition-all duration-300;
+    background: radial-gradient(
+      circle at 50% 0%,
+      hsl(var(--primary) / 0.05) 0%,
+      transparent 70%
+    );
+    transform: scale(0);
+  }
+
+  .feature-card:hover {
+    @apply -translate-y-2 scale-105 border-primary/60;
+    box-shadow:
+      0 25px 50px -12px rgba(0, 0, 0, 0.1),
+      0 0 25px 0px hsl(var(--primary) / 0.2);
+  }
+
+  .feature-card:hover:before {
+    @apply opacity-100;
+    transform: scale(1);
+  }
+
+  /* Perspective effects */
+  .perspective-container {
+    perspective: 1000px;
+  }
+
+  .perspective-card {
+    @apply transition-transform duration-500;
+    transform-style: preserve-3d;
+  }
+
+  .perspective-container:hover .perspective-card {
+    transform: rotateY(10deg) rotateX(-5deg) scale(1.05);
+  }
+
+  /* CTA Button with ripple effect */
+  .cta-button {
+    @apply relative overflow-hidden z-10 transition-all duration-300;
+  }
+
+  .cta-button:before {
+    content: "";
+    @apply absolute top-1/2 left-1/2 w-0 h-0 bg-primary rounded-full transition-all duration-400 -z-10;
+    transform: translate(-50%, -50%);
+  }
+
+  .cta-button:hover {
+    @apply text-primary-foreground scale-105;
+  }
+
+  .cta-button:hover:before {
+    width: 225%;
+    height: 500%;
+  }
+
+  /* Glow effects */
+  .glow-pulse {
+    animation: pulse-glow 5s ease-in-out infinite;
+  }
+
+  /* Logo animation */
+  .logo-animate {
+    animation: logo-glow 4s ease-in-out infinite;
+  }
+}
+
+@layer utilities {
+  /* Custom animations */
+  @keyframes subtle-float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes pulse-glow {
+    0%,
+    100% {
+      box-shadow:
+        0 0 20px 5px var(--glow-color),
+        0 0 40px 10px var(--glow-color),
+        0 0 60px 15px transparent;
+    }
+    50% {
+      box-shadow:
+        0 0 30px 8px var(--glow-color),
+        0 0 50px 15px var(--glow-color),
+        0 0 70px 20px transparent;
+    }
+  }
+
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes logo-glow {
+    0% {
+      filter: drop-shadow(0 0 2px hsl(var(--primary-light) / 0.7));
+      transform: scale(1);
+    }
+    50% {
+      filter: drop-shadow(0 0 8px hsl(var(--primary-light)))
+        drop-shadow(0 0 15px hsl(var(--primary-light) / 0.5));
+      transform: scale(1.05);
+    }
+    100% {
+      filter: drop-shadow(0 0 2px hsl(var(--primary-light) / 0.7));
+      transform: scale(1);
+    }
+  }
+
+  .floating-element {
+    animation: subtle-float 6s ease-in-out infinite;
+  }
+
+  .animate-fadeInDown {
+    animation: fadeInDown 1s ease-out forwards;
+  }
+
+  .delay-200 {
+    animation-delay: 0.2s;
+  }
+  .delay-400 {
+    animation-delay: 0.4s;
+  }
+  .delay-600 {
+    animation-delay: 0.6s;
+  }
+  .delay-800 {
+    animation-delay: 0.8s;
+  }
+
+  /* Auth Pages Styles */
+  .pattern-bg {
+    background-color: #0d1117;
+    background-image:
+      linear-gradient(to right, rgba(99, 102, 241, 0.15) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(99, 102, 241, 0.15) 1px, transparent 1px);
+    background-size: 3rem 3rem;
+  }
+
+  .pattern-bg::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 30%, #4f46e5, transparent 50%);
+    opacity: 0.2;
+    filter: blur(80px);
+  }
+
+  .pattern-bg::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 70% 70%, #2563eb, transparent 50%);
+    opacity: 0.2;
+    filter: blur(80px);
+  }
+
+  .signup-pattern-bg {
+    background-color: #0c0a09;
+    background-image: radial-gradient(
+      circle at 1px 1px,
+      rgba(255, 255, 255, 0.1) 1px,
+      transparent 0
+    );
+    background-size: 2rem 2rem;
+  }
+
+  .globe-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    perspective: 1000px;
+  }
+
+  .globe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    transform-style: preserve-3d;
+    animation: rotate-globe 30s linear infinite;
+  }
+
+  .globe-ring {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgba(167, 139, 250, 0.2);
+    border-radius: 50%;
+  }
+
+  .globe-ring-1 {
+    transform: rotateY(0deg) rotateX(15deg);
+  }
+  .globe-ring-2 {
+    transform: rotateY(0deg) rotateX(75deg);
+  }
+  .globe-ring-3 {
+    transform: rotateY(90deg) rotateX(15deg);
+  }
+  .globe-ring-4 {
+    transform: rotateY(90deg) rotateX(75deg);
+  }
+  .globe-ring-5 {
+    transform: rotateY(45deg);
+  }
+  .globe-ring-6 {
+    transform: rotateY(-45deg);
+  }
+
+  .data-point {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #818cf8;
+    border-radius: 50%;
+    box-shadow:
+      0 0 12px #818cf8,
+      0 0 24px #818cf8;
+    animation: pulse-data 2.5s infinite ease-in-out;
+  }
+
+  @keyframes rotate-globe {
+    from {
+      transform: rotateY(0deg) rotateX(10deg);
+    }
+    to {
+      transform: rotateY(360deg) rotateX(10deg);
+    }
+  }
+
+  @keyframes pulse-data {
+    0%,
+    100% {
+      transform: scale(0.9);
+      opacity: 0.8;
+    }
+    50% {
+      transform: scale(1.3);
+      opacity: 1;
+    }
+  }
+
+  .text-shadow {
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.7);
+  }
+
+  @keyframes animate-blob {
+    0% {
+      transform: translate(0px, 0px) scale(1);
+    }
+    33% {
+      transform: translate(30px, -50px) scale(1.1);
+    }
+    66% {
+      transform: translate(-20px, 20px) scale(0.9);
+    }
+    100% {
+      transform: translate(0px, 0px) scale(1);
+    }
+  }
+
+  .animate-blob {
+    animation: animate-blob 7s infinite;
+  }
+
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+}

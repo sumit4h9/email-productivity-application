@@ -1,0 +1,82 @@
+return (
+      <div className="flex flex-col items-center justify-center py-16 space-y-4">
+        <div className="w-16 h-16 bg-bg-tertiary rounded-full flex items-center justify-center">
+          <span className="text-2xl text-text-tertiary">📭</span>
+        </div>
+        <p className="text-sm text-text-secondary font-medium">
+          {searchQuery || tagFilter
+            ? `No emails found matching your criteria`
+            : getEmptyMessage()}
+        </p>
+        {/* Show tag filter buttons even if no emails found */}
+        <div className="flex space-x-2 mt-4">
+          <button
+            onClick={() => setTagFilter(null)}
+            className={`px-3 py-1 rounded-full text-xs font-medium ${
+              tagFilter === null
+                ? "bg-accent-primary text-accent-text"
+                : "bg-bg-primary text-text-secondary border border-border-secondary hover:bg-bg-tertiary"
+            }`}
+          >
+            All
+          </button>
+          {["payment", "work", "spam", "promotion", "custom"].map(tag => (
+            <button
+              key={tag}
+              onClick={() => setTagFilter(tag)}
+              className={`px-3 py-1 rounded-full text-xs font-medium ${
+                tagFilter === tag
+                  ? "bg-accent-primary text-accent-text"
+                  : "bg-bg-primary text-text-secondary border border-border-secondary hover:bg-bg-tertiary"
+              }`}
+            >
+              {tag.charAt(0).toUpperCase() + tag.slice(1)}
+            </button>
+          ))}
+        </div>
+      </div>
+    );
+  }
+=======
+  if (filteredEmails.length === 0) {
+    return (
+      <div className="py-16 space-y-4">
+        <div className="flex flex-col items-center justify-center space-y-4 mb-4">
+          <div className="w-16 h-16 bg-bg-tertiary rounded-full flex items-center justify-center">
+            <span className="text-2xl text-text-tertiary">📭</span>
+          </div>
+          <p className="text-sm text-text-secondary font-medium text-center">
+            {searchQuery || tagFilter
+              ? `No emails found matching your criteria`
+              : getEmptyMessage()}
+          </p>
+        </div>
+        {/* Show tag filter buttons even if no emails found */}
+        <div className="flex space-x-2">
+          <button
+            onClick={() => setTagFilter(null)}
+            className={`px-3 py-1 rounded-full text-xs font-medium ${
+              tagFilter === null
+                ? "bg-accent-primary text-accent-text"
+                : "bg-bg-primary text-text-secondary border border-border-secondary hover:bg-bg-tertiary"
+            }`}
+          >
+            All
+          </button>
+          {["payment", "work", "spam", "promotion", "custom"].map(tag => (
+            <button
+              key={tag}
+              onClick={() => setTagFilter(tag)}
+              className={`px-3 py-1 rounded-full text-xs font-medium ${
+                tagFilter === tag
+                  ? "bg-accent-primary text-accent-text"
+                  : "bg-bg-primary text-text-secondary border border-border-secondary hover:bg-bg-tertiary"
+              }`}
+            >
+              {tag.charAt(0).toUpperCase() + tag.slice(1)}
+            </button>
+          ))}
+        </div>
+      </div>
+    );
+  }
