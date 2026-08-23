@@ -999,9 +999,10 @@ async def signup_init(
 
     except HTTPException:
         raise
-    except Exception:
+    except Exception as e:
         logger.error(
-            "Signup init error", extra={"request_id": getattr(request.state, "request_id", None)}
+            f"Signup init error: {type(e).__name__}: {e}",
+            extra={"request_id": getattr(request.state, "request_id", None)},
         )
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail="Signup initialization failed"
