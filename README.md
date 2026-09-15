@@ -1,5 +1,6 @@
 # MY-APP
 
+LINK --- https://email-productivity-application-nu.vercel.app/
 ## Project Structure
 
 - `frontend/` - Frontend application code
